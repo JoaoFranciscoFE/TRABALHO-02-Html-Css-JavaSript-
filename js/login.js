@@ -13,9 +13,13 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
 
   if (userData) {
       const user = JSON.parse(userData);
-      if (user.chave === emailLogin && user.valor === passwordLogin) {
-          animesLogin.textContent = `Animes que você gosta: ${user.valor3}`;
+      if (user.email === emailLogin && user.senha === passwordLogin) {
+          animesLogin.textContent = `Animes que você gosta: ${user.animes}`;
           feedbackLogin.textContent = 'Login bem-sucedido!';
+          window.location.href = "homePage.html";
+          setTimeout(function() {
+            window.location.href = 'login.html';
+            }, 2000);
       } else {
           feedbackLogin.textContent = 'E-mail ou senha incorretos.';
       }

@@ -25,10 +25,10 @@ document.getElementById('registerForm').addEventListener('submit', function(even
   }
 
   const nomerRegEx = /^[A-Za-z]{3,}$/;
-if (!nomerRegEx.test(nomer)) {
-    nomerError.textContent = 'O nome deve ter no mínimo 3 caracteres';
-    return;
-}
+  if (!nomerRegEx.test(nomer)) {
+        nomerError.textContent = 'O nome deve ter no mínimo 3 caracteres';
+        return;
+  }
 
   const passwordrRegEx = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
   if (!passwordrRegEx.test(passwordr)) {
@@ -42,10 +42,10 @@ if (!nomerRegEx.test(nomer)) {
   }
 
   let novoUser = {
-      chave: emailr,       
-      valor: passwordr,    
-      valor2: nomer,       
-      valor3: animes       
+      email: emailr,       
+      senha: passwordr,    
+      nome: nomer,       
+      animes: animes       
   };
 
   localStorage.setItem('user', JSON.stringify(novoUser));
